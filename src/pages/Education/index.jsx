@@ -16,7 +16,7 @@ function Education() {
     };
     
      const nextPage =()=>{
-  console.log("sjsj")
+  // console.log("sjsj")
     updateData('education',formData)
     navigate('/app/experience'); 
  }

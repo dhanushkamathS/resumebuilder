@@ -17,7 +17,7 @@ function Skills() {
         };
 
         const finish =()=>{
-            console.log("sjsj")
+            // console.log("sjsj")
             updateData('skills',formData)
             console.log(JSON.stringify(data))
             navigation('/app/review')

@@ -6,7 +6,7 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState({personalDetail:null,experience:null,education:null,projects:null,achievements:null,skills:null});
 
   const updateData = (event,newData) => {
-    console.log(newData)
+    // console.log(newData)
     data[event] = newData
     setData(data);
   };

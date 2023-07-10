@@ -14,7 +14,7 @@ function PersonalDetail() {
   const [formData, setFormData] = useState(data['personalDetail'] == null ? {firstName:'',lastName:'',email:'',phoneNo:'',github:'',linkedin:''}  : data['personalDetail'] );
 
  const nextPage =()=>{
-  console.log("sjsj")
+  // console.log("sjsj")
     updateData('personalDetail',formData)
     navigate('/app/education'); 
  }

@@ -17,7 +17,7 @@ function Experience() {
     };
 
     const nextPage =()=>{
-    console.log("sjsj")
+    // console.log("sjsj")
       updateData('experience',formData)
       navigation('/app/projects')
     }

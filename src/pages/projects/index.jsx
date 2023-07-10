@@ -19,7 +19,7 @@ function Project() {
     };
 
        const nextPage =()=>{
-    console.log("sjsj")
+    // console.log("sjsj")
       updateData('projects',formData)
       navigation('/app/achievement')
     }

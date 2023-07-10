@@ -17,7 +17,7 @@ function Achievement() {
       };
 
     const nextPage =()=>{
-  console.log("sjsj")
+  // console.log("sjsj")
     updateData('achievements',formData)
     navigation('/app/skills')
  }

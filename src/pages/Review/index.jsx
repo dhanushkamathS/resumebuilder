@@ -6,7 +6,9 @@ import { DataContext } from '../../context/DataContext'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { BASE_URL_LOCAL } from '../../constants/constant'
+import { BASE_URL_LOCAL ,BASE_URL_PROD} from '../../constants/constant'
+
+const BASE_URL =  import.meta.env.VITE_BASE_URL_PROD == null || import.meta.env.VITE_BASE_URL_PROD == undefined ? BASE_URL_LOCAL :import.meta.env.VITE_BASE_URL_PROD  
 const Review = () =>{
 
 const { data, updateData } = useContext(DataContext);
@@ -122,7 +124,7 @@ const DownloadModal = ({data}) => {
 
   const initiateProcess = async() =>{
     try {
-        const response = await axios.post(`${BASE_URL_LOCAL}/api/createpdf`, {data});
+        const response = await axios.post(`${BASE_URL}/api/createpdf`, {data});
         console.log(response.data)
         if(response?.data?.status == 'failure'){
             toast(response?.data?.msg)
@@ -145,13 +147,13 @@ const DownloadModal = ({data}) => {
     e.preventDefault();
 
     if(!isValidEmail(email)){
-        console.log('eee')
+        // console.log('eee')
         setIsError('invalid input')
         return
     }
 
   
-    await axios.get(`${BASE_URL_LOCAL}/api/setemail?pdfId=${pdfId}&email=${email}`)
+    await axios.get(`${BASE_URL}/api/setemail?pdfId=${pdfId}&email=${email}`)
     linkRef.current.click();
     setIsOpen(false)
     setPdfId('')
@@ -197,7 +199,7 @@ const DownloadModal = ({data}) => {
                       <div className="mt-2">
                         {
                             isOpen ?
-                              <a href={`${BASE_URL_LOCAL}/api/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
+                              <a href={`${BASE_URL}/api/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
                               :
                               <></>
                         }
@@ -352,7 +354,7 @@ const ProjectSection = ({data}) =>{
                                 <span>Link </span>:<span>{ val?.link}</span>
                         </span> 
                         </p> 
-                         <p className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                         <div className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
                             <span>Points</span>
                             <div>
                             {
@@ -363,7 +365,7 @@ const ProjectSection = ({data}) =>{
                                 ))
                             }
                             </div>
-                        </p> 
+                        </div> 
                     </div>
                 ))
             }
