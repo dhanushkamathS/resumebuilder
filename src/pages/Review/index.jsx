@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL_LOCAL ,BASE_URL_PROD} from '../../constants/constant'
 
-const BASE_URL =  import.meta.env.VITE_BASE_URL_PROD == null || import.meta.env.VITE_BASE_URL_PROD == undefined ? BASE_URL_LOCAL :import.meta.env.VITE_BASE_URL_PROD  
+const BASE_URL = BASE_URL_PROD  
 const Review = () =>{
 
 const { data, updateData } = useContext(DataContext);
