@@ -38,9 +38,7 @@ function Experience() {
     </div>
     
     
-    <div className='md:text-2xl sm:text-lg text-center text-white'>
-      <p>If you don't want this section you can delete it</p>
-    </div>
+    
     <div className='dark:bg-gray-900 py-[4%]'>
         {formData.map((value, index) => (
             <div  key={index}>

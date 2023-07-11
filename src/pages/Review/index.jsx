@@ -6,6 +6,7 @@ import { DataContext } from '../../context/DataContext'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import LoadingComponent from '../../components/LoadingComponent'
 import { BASE_URL_LOCAL ,BASE_URL_PROD} from '../../constants/constant'
 
 const BASE_URL = BASE_URL_PROD
@@ -119,12 +120,13 @@ const DownloadModal = ({data}) => {
   const [email, setEmail] = useState('');
   const [isError,setIsError] = useState(false)
   const [pdfId,setPdfId] = useState('')
+  const [isLoading,setIsLoading] = useState(false)
    const linkRef = useRef(null);
   
 
   const initiateProcess = async() =>{
     try {
-        const response = await axios.post(`${BASE_URL}/api/createpdf`, {data});
+        const response = await axios.post(`${BASE_URL}/createpdf`, {data});
         console.log(response.data)
         if(response?.data?.status == 'failure'){
             toast(response?.data?.msg)
@@ -145,6 +147,7 @@ const DownloadModal = ({data}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
 
     if(!isValidEmail(email)){
         // console.log('eee')
@@ -153,11 +156,12 @@ const DownloadModal = ({data}) => {
     }
 
   
-    await axios.post(`${BASE_URL}/api/setemail`,{pdfId,email,data})
+    await axios.post(`${BASE_URL}/setemail`,{pdfId,email,data})
     linkRef.current.click();
     setIsOpen(false)
     setPdfId('')
     setIsError(false)
+    setIsLoading(false)
 
   };
 
@@ -199,16 +203,27 @@ const DownloadModal = ({data}) => {
                       <div className="mt-2">
                         {
                             isOpen ?
-                              <a href={`${BASE_URL}/api/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
+                              <a href={`${BASE_URL}/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
                               :
                               <></>
                         }
-                        <button
+                        {
+                          isLoading ?
+                          <button
+                          className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                        >
+                          <LoadingComponent/>
+                        </button>
+                        :
+                          <button
                           onClick={handleSubmit}
                           className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                         >
                           download
                         </button>
+                        
+                        }
+                       
                         <button
                           type="button"
                           className="ml-2 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-700 bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
