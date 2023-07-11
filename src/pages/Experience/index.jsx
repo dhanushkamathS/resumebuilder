@@ -89,7 +89,7 @@ setFormData(data)
      <div className='xl:mx-[20%] mx-[10%] '>
       
         <div className='flex justify-end'>
-            <button type="button" onClick={()=>{removeItem(index)}} className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">delete</button>
+            <button type="button" onClick={()=>{removeItem(index)}} className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
         </div>
             <div className="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
@@ -97,16 +97,16 @@ setFormData(data)
                     <input type="text" name="company" placeholder='company' value={value.company} onChange={(e) => {handleFormChange(index,e)}}  id="college_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
                 </div>
                 <div>
-                    <label  className="block mb-2 text-sm font-medium text-white">role</label>
+                    <label  className="block mb-2 text-sm font-medium text-white">Role</label>
                     <input type="text" name="role" placeholder='role' value={value.role} onChange={(e) => {handleFormChange(index,e)}}  id="last_name"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                 </div>
                 <div>
-                    <label  className="block mb-2 text-sm font-medium text-white">location</label>
+                    <label  className="block mb-2 text-sm font-medium text-white">Location</label>
                     <input type="text"  value={value.location} onChange={(e) => {handleFormChange(index,e)}} id="location" name="location" placeholder='bangalore,india'  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                 </div> 
                 
                 <div>
-                    <label  className="block mb-2 text-sm font-medium text-white">date</label>
+                    <label  className="block mb-2 text-sm font-medium text-white">Date</label>
                     <input type="text" name="date"value={value.date} onChange={(e) => {handleFormChange(index,e)}}   id="year"  placeholder='2019 - 2023' className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                 </div>
                 <div className='flex justify-end'>
@@ -118,10 +118,10 @@ setFormData(data)
                     value.points.map((value,pointIndex)=>(
                         <div className='flex flex-row space-x-5 w-full'  key={pointIndex}>
                           <div className='w-[90%]'>
-                            <label  className="block mb-2 text-sm font-medium text-white">discriptions</label>
-                             <input type="text" placeholder='discription' value={value} onChange={(e)=>{handlePointChange(e,pointIndex)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
+                            <label  className="block mb-2 text-sm font-medium text-white">Descriptions</label>
+                             <input type="text" placeholder='descriptions' value={value} onChange={(e)=>{handlePointChange(e,pointIndex)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                           </div> 
-                          <button type="button" onClick={()=>{removePoint(pointIndex)}} className="focus:outline-none text-white mt-7 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 h-10   dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">del</button>
+                          <button type="button" onClick={()=>{removePoint(pointIndex)}} className="focus:outline-none text-white mt-7 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 h-10   dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Del</button>
                         </div>
                     ))
                 }

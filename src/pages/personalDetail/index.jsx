@@ -23,7 +23,7 @@ function PersonalDetail() {
     <>
     <Navbar/>
     <CurrentPosition value={"personal details"}/>
-      <h1 className='text-lg lg:text-5xl text-center text-white'>Personal Detail</h1>
+      <h1 className='text-lg lg:text-5xl text-center text-white'>Personal Details</h1>
       <PersonalDetailInput formData={formData} setFormData={setFormData}/>
       <div className='flex justify-end mx-[10%] mb-[10%]'>    
             <button onClick={nextPage} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Next</button>
