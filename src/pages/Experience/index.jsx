@@ -42,7 +42,7 @@ function Experience() {
             <button type="button" onClick={addInput} className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Add Field</button>
     </div>
 
-    <div className='flex justify-between mx-[10%] my-[20%] sm:mx-[20%] sm:my-0'>
+    <div className='flex justify-between mx-[10%] my-[10%] sm:mx-[20%] sm:my-0'>
         <button type="button" onClick={()=>{navigation(-1)}} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Previous</button>
         <button type="button" onClick={()=>{nextPage()}}className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Next</button>
     </div>
@@ -91,7 +91,7 @@ setFormData(data)
         <div className='flex justify-end'>
             <button type="button" onClick={()=>{removeItem(index)}} className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
         </div>
-            <div className="grid gap-6 mb-6 md:grid-cols-2">
+            <div className="grid gap-3 mb-6 md:grid-cols-2">
                 <div>
                     <label  className="block mb-2 text-sm font-medium text-white">Company</label>
                     <input type="text" name="company" placeholder='company' value={value.company} onChange={(e) => {handleFormChange(index,e)}}  id="college_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
@@ -101,7 +101,7 @@ setFormData(data)
                     <input type="text" name="role" placeholder='role' value={value.role} onChange={(e) => {handleFormChange(index,e)}}  id="last_name"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                 </div>
                 <div>
-                    <label  className="block mb-2 text-sm font-medium text-white">Location</label>
+                    <label  className="block mb-1 text-sm font-medium text-white">Location</label>
                     <input type="text"  value={value.location} onChange={(e) => {handleFormChange(index,e)}} id="location" name="location" placeholder='bangalore,india'  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                 </div> 
                 

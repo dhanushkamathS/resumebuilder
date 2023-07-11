@@ -44,7 +44,7 @@ const PersonalDetailInput = ({formData,setFormData}) =>{
 
 
   return(
-       <div className='bg-gray-900 py-[7%]'>
+       <div className='bg-gray-900 py-[2%]'>
         <div className='xl:mx-[20%] mx-[10%]'>
             <div className="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
