@@ -146,7 +146,7 @@ const DownloadModal = ({data}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true)
+   
 
     if(!isValidEmail(email)){
         // console.log('eee')
@@ -154,7 +154,7 @@ const DownloadModal = ({data}) => {
         return
     }
 
-  
+    setIsLoading(true)
     await axios.post(`${BASE_URL}/setemail`,{pdfId,email,data})
     linkRef.current.click();
     setIsOpen(false)
