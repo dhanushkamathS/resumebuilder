@@ -19,25 +19,25 @@ const { data, updateData } = useContext(DataContext);
   return(
   <>
 
-    <div className='dark:bg-gray-900 h-screen'>
+    <div className='bg-gray-900 h-screen'>
     <ToastContainer/>
       {/* navBar */}
       <Navbar/>
-      <p className='text-white text-2xl text-center'>Review your Details</p>
+      <p className='text-white text-md md:text-2xl text-center'>Review your Details</p>
       {/* You can open the modal using ID.showModal() method */}
 
-     <div className='flex justify-between mx-[20%]'>
+     <div className='flex justify-center md:justify-between mx-[20%]'>
             <DownloadModal data={data}/>
     </div>
 
 
-      <div className='xl:mx-[20%] md:mx-[10%] sm:mx-[4%] h-[90%]'>
+      <div className='xl:mx-[20%] md:mx-[10%] mx-[4%] h-[90%]'>
         {/* personal detail */}
         <div className='text-white'>
             <h2 className='text-center text-2xl'>Personal Details</h2>
             {
             data["personalDetail"] == null ? 
-            <h2 className='text-center text-2xl'>EMPTY</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>EMPTY</h2>
             :
             <PersonalDetailSection data={data["personalDetail"]}/>
             }
@@ -45,10 +45,10 @@ const { data, updateData } = useContext(DataContext);
         <hr className="border border-gray-300 my-4 "/>
         {/* education */}
         <div className='text-white'>
-            <h2 className='text-center text-2xl'>Education</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>Education</h2>
             {
             data["education"] == null ? 
-            <h2 className='text-center text-2xl'>EMPTY</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>EMPTY</h2>
             :
             <EducationSection data={data["education"]}/>
             }
@@ -58,7 +58,7 @@ const { data, updateData } = useContext(DataContext);
 
          {/* experience */}
         <div className='text-white'>
-            <h2 className='text-center text-2xl'>Experience</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>Experience</h2>
             {
             data["experience"] == null ? 
             <h2 className='text-center text-2xl'>EMPTY</h2>
@@ -67,11 +67,10 @@ const { data, updateData } = useContext(DataContext);
             }
         </div>
         
-        userinfo
         <hr className="border border-gray-300 my-4 "/>
         {/* Projects */}
         <div className='text-white'>
-            <h2 className='text-center text-2xl'>Projects</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>Projects</h2>
             {
             data["projects"] == null ? 
             <h2 className='text-center text-2xl'>EMPTY</h2>
@@ -83,7 +82,7 @@ const { data, updateData } = useContext(DataContext);
         <hr className="border border-gray-300 my-4 "/>
         {/* Achievement */}
         <div className='text-white'>
-            <h2 className='text-center text-2xl'>Achievement</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>Achievement</h2>
             {
             data["projects"] == null ? 
             <h2 className='text-center text-2xl'>EMPTY</h2>
@@ -95,7 +94,7 @@ const { data, updateData } = useContext(DataContext);
         <hr className="border border-gray-300 my-4 "/>
         {/* Skills*/}
         <div className='text-white'>
-            <h2 className='text-center text-2xl'>Skills</h2>
+            <h2 className='text-center text-sm lg:text-2xl'>Skills</h2>
             {
             data["projects"] == null ? 
             <h2 className='text-center text-2xl'>EMPTY</h2>
@@ -189,7 +188,7 @@ const DownloadModal = ({data}) => {
                     <form>
                       <input
                         type="email"
-                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
                         placeholder="Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -252,7 +251,7 @@ const SkillsSection = ({data})=>{
             {
                 data?.map((val,index)=>(
                      <div key={index} className='bg-gray-800 my-2'>
-                        <p className='text-white sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex flex-row justify-start space-x-20'>
                         <span>
                             <span>{ val?.skillName}</span>:<span>{ val?.skillValue}</span>
                             </span> 
@@ -274,12 +273,12 @@ const AchievementSection = ({data})=>{
             {
                 data?.map((val,index)=>(
                      <div key={index} className='bg-gray-800 my-2'>
-                        <p className='text-white sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex flex-row justify-start space-x-20'>
                         <span>
                                 <span>Company </span>:<span>{ val?.name}</span>
                             </span> 
                         </p>
-                         <div className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                         <div className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                             <span>Points</span>
                             <div>
                             {
@@ -309,7 +308,7 @@ const ExperienceSection = ({data})=>{
             {
                 data?.map((val,index)=>(
                      <div key={index} className='bg-gray-800 my-2'>
-                        <p className='text-white sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex flex-row justify-start space-x-20'>
                         <span>
                                 <span>Company </span>:<span>{ val?.company}</span>
                             </span> 
@@ -317,7 +316,7 @@ const ExperienceSection = ({data})=>{
                                 <span>Role</span>:<span>{ val?.role}</span>
                             </span>
                         </p>
-                        <p className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                         <span>
                                 <span>Location</span>:<span>{ val?.location}</span>
                         </span> 
@@ -325,7 +324,7 @@ const ExperienceSection = ({data})=>{
                                 <span>Date</span>:<span>{ val?.date}</span>
                         </span>
                         </p> 
-                         <div className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                         <div className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                             <span>Points</span>
                             <div>
                             {
@@ -356,7 +355,7 @@ const ProjectSection = ({data}) =>{
             {
                 data?.map((val,index)=>(
                      <div key={index} className='bg-gray-800 my-2'> 
-                        <p className='text-white sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex flex-row justify-start space-x-20'>
                         <span>
                                 <span>Project Name </span>:<span>{ val?.projectName}</span>
                             </span> 
@@ -364,12 +363,12 @@ const ProjectSection = ({data}) =>{
                                 <span>Course </span>:<span>{ val?.tech}</span>
                             </span>
                         </p>
-                        <p className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                         <span>
                                 <span>Link </span>:<span>{ val?.link}</span>
                         </span> 
                         </p> 
-                         <div className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+                         <div className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                             <span>Points</span>
                             <div>
                             {
@@ -399,7 +398,7 @@ const EducationSection = ({data}) =>{
             {
                 data?.map((val,index)=>(
                      <div className='bg-gray-800 my-2' key={index}>
-                        <p className='text-white  sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+                        <p className='text-white  text-sm md:text-md flex flex-row justify-start space-x-20'>
                         <span>
                                 <span>College Name </span>:<span>{ val?.cllgName}</span>
                             </span> 
@@ -407,7 +406,7 @@ const EducationSection = ({data}) =>{
                                 <span>Course </span>:<span>{ val?.course}</span>
                             </span>
                         </p>
-                        <p className='text-white sm:text-sm text-md flex  flex-row justify-start space-x-20'>
+                        <p className='text-white text-sm text-md flex  flex-row justify-start space-x-20'>
                         <span>
                                 <span>Location </span>:<span>{ val?.location}</span>
                             </span> 
@@ -428,7 +427,7 @@ const PersonalDetailSection = ({data}) => {
     return(
         <div className="bg-gray-800 my-2">
         <div className='text-white'>
-            <p className='text-white sm:text-sm md:text-md flex flex-row justify-start space-x-20'>
+            <p className='text-white text-sm md:text-md flex flex-row justify-start space-x-20'>
                <span>
                     <span>First Name </span>:<span>{ data?.firstName}</span>
                 </span> 
@@ -436,7 +435,7 @@ const PersonalDetailSection = ({data}) => {
                     <span>Last Name </span>:<span>{ data?.lastName}</span>
                 </span>
             </p>
-             <p className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+             <p className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                <span>
                     <span>Email </span>:<span>{ data?.email}</span>
                 </span> 
@@ -444,7 +443,7 @@ const PersonalDetailSection = ({data}) => {
                     <span>Phone Numer </span>:<span>{ data?.phoneNo}</span>
                 </span>
             </p>
-             <p className='text-white sm:text-sm md:text-md flex  flex-row justify-start space-x-20'>
+             <p className='text-white text-sm md:text-md flex  flex-row justify-start space-x-20'>
                <span>
                     <span>Github </span>:<span>{ data?.github}</span>
                 </span> 
