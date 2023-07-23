@@ -16,7 +16,7 @@ function PersonalDetail() {
 
  const nextPage =()=>{
   console.log("personal deatil page")
-    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "landing" });
+    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "personalDetail" });
     updateData('personalDetail',formData)
     navigate('/app/education'); 
  }
