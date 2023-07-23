@@ -3,6 +3,7 @@ import { Route, Routes,useNavigate } from "react-router-dom"
 import Navbar from '../../components/Navbar'
 import { DataContext } from '../../context/DataContext'
 import CurrentPosition from '../../components/CurrentPosition'
+import ReactGA from "react-ga4";
 function Skills() {
 
 
@@ -17,7 +18,8 @@ function Skills() {
         };
 
         const finish =()=>{
-            // console.log("sjsj")
+            console.log("skills")
+            ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "skills" });
             updateData('skills',formData)
             console.log(JSON.stringify(data))
             navigation('/app/review')

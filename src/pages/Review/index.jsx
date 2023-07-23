@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoadingComponent from '../../components/LoadingComponent'
 import { BASE_URL_LOCAL ,BASE_URL_PROD} from '../../constants/constant'
+import ReactGA from "react-ga4";
 
 const BASE_URL = BASE_URL_PROD
 const Review = () =>{
@@ -125,6 +126,10 @@ const DownloadModal = ({data}) => {
 
   const initiateProcess = async() =>{
     try {
+        ReactGA.event({
+          category: "download",
+          action: "download initiated"
+      });
         const response = await axios.post(`${BASE_URL}/createpdf`, {data});
         console.log(response.data)
         if(response?.data?.status == 'failure'){
@@ -146,7 +151,12 @@ const DownloadModal = ({data}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-   
+    
+    console.log("pdf is being downloaded")
+    ReactGA.event({
+          category: "download",
+          action: "pdf downloaded"
+      });
 
     // if(!isValidEmail(email)){
     //     // console.log('eee')

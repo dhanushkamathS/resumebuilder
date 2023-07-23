@@ -17,8 +17,8 @@ ReactGA.initialize("G-7LJDT3JBPS");
 function App() {
 
   useEffect(()=>{
-    console.log("analytics")
-    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "Custom Title" });
+    // console.log("analytics")
+    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "landing" });
   },[])
   return (
     <>

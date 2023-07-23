@@ -15,11 +15,8 @@ function PersonalDetail() {
   const [formData, setFormData] = useState(data['personalDetail'] == null ? {firstName:'',lastName:'',email:'',phoneNo:'',github:'',linkedin:''}  : data['personalDetail'] );
 
  const nextPage =()=>{
-  // console.log("sjsj")
-  ReactGA.event({
-  category: "education",
-  action: "added data"
-});
+  console.log("personal deatil page")
+    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "landing" });
     updateData('personalDetail',formData)
     navigate('/app/education'); 
  }

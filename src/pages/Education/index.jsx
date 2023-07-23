@@ -3,6 +3,7 @@ import { Route, Routes,useNavigate } from "react-router-dom"
 import Navbar from '../../components/Navbar'
 import { DataContext } from '../../context/DataContext'
 import CurrentPosition from '../../components/CurrentPosition'
+import ReactGA from "react-ga4";
 function Education() {
 
    const navigate = useNavigate()
@@ -16,7 +17,9 @@ function Education() {
     };
     
      const nextPage =()=>{
-  // console.log("sjsj")
+  // console.log("sjsj" )
+  console.log("education")
+   ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "education" });
     updateData('education',formData)
     navigate('/app/experience'); 
  }
