@@ -3,7 +3,7 @@ import { Route, Routes,useNavigate } from "react-router-dom"
 import Navbar from '../../components/Navbar'
 import { DataContext } from '../../context/DataContext'
 import CurrentPosition from '../../components/CurrentPosition'
-
+import ReactGA from "react-ga4";
 
 function PersonalDetail() {
 
@@ -11,10 +11,15 @@ function PersonalDetail() {
     const { data, updateData } = useContext(DataContext);
 
 
+
   const [formData, setFormData] = useState(data['personalDetail'] == null ? {firstName:'',lastName:'',email:'',phoneNo:'',github:'',linkedin:''}  : data['personalDetail'] );
 
  const nextPage =()=>{
   // console.log("sjsj")
+  ReactGA.event({
+  category: "education",
+  action: "added data"
+});
     updateData('personalDetail',formData)
     navigate('/app/education'); 
  }
