@@ -8,6 +8,7 @@ import Achievement from './pages/Achievement'
 import Project from './pages/projects'
 import Skills from './pages/skills'
 import Review from './pages/Review'
+import Landing from './pages/Landing'
 import { DataProvider } from './context/DataContext'
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
     <>
     <DataProvider>
     <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/app/personal-detail" element={<PersonalDetail/>} />
         <Route path="/app/education" element={<Education/>} />
         <Route path="/app/experience" element={<Experience/>} />
