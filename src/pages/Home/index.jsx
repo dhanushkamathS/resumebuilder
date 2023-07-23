@@ -16,7 +16,7 @@ const Home = () =>{
           <div className='mb-[20%] ml-[10%]'>
             <h2 className='md:text-5xl text-lg text-center md:text-start font-bold text-white'>IMPRESSIVE RESUMES</h2>
             <h2 className='md:text-5xl text-lg text-center md:text-start font-bold text-white'>EASY ONLINE BUILDER</h2>    
-            <h2 className='md:text-5xl text-lg text-center md:text-start font-bold text-white'>Jake's resume as the templete</h2>    
+            <h2 className='md:text-5xl text-lg text-center md:text-start font-bold text-white'>Jake's resume as the template</h2>    
             <ul className='text-lg space-y-2 font-light text-gray-200'>
               {/* <li className='ml-[10%] font-bold text-white'>Jake's resume as the templete</li> */}
               <li className='text-white text-xs text-center md:text-left md:text-xl'>The only resume builder you will ever need</li>

@@ -8,7 +8,7 @@ function Experience() {
     const navigation = useNavigate()
     const { data, updateData } = useContext(DataContext);
     
-    const [formData, setFormData] = useState(data['experience'] == null ? [{company:'',role:'',location:'',date:'',points:['']}] : data['experience'] );
+    const [formData, setFormData] = useState(data['experience'] == null ? [{company:'',role:'',location:'',date:'',points:['','']}] : data['experience'] );
 
 
     const addInput = () => {
@@ -33,7 +33,13 @@ function Experience() {
         {formData.map((value, index) => (
             <div  key={index}>
             <ExperienceInput value={value} index={index} formData={formData} setFormData={setFormData} />
-            <hr className="border border-gray-300 my-4 mx-[20%]"/>
+            {
+              formData.length -1 != index ?
+                <hr className="border border-gray-300 my-4 mx-[20%]"/>
+                :
+                <></>
+            }
+        
             </div>
         ))}
     </div>
@@ -118,8 +124,8 @@ setFormData(data)
                     value.points.map((value,pointIndex)=>(
                         <div className='flex flex-row space-x-5 w-full'  key={pointIndex}>
                           <div className='w-[90%]'>
-                            <label  className="block mb-2 text-sm font-medium text-white">Descriptions</label>
-                             <input type="text" placeholder='descriptions' value={value} onChange={(e)=>{handlePointChange(e,pointIndex)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
+                            <label  className="block mb-2 text-sm font-medium text-white">Work Experience</label>
+                             <input type="text" placeholder='Improved api efficiency by 30%' value={value} onChange={(e)=>{handlePointChange(e,pointIndex)}} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  required/>
                           </div> 
                           <button type="button" onClick={()=>{removePoint(pointIndex)}} className="focus:outline-none text-white mt-7 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 h-10   dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Del</button>
                         </div>

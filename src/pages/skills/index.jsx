@@ -40,7 +40,12 @@ function Skills() {
         {formData.map((value, index) => (
             <div key={index}>
             <SkillsInput  value={value} index={index} formData={formData} setFormData={setFormData} />
-            <hr className="border border-gray-300 my-4 mx-[20%]"/>
+            {
+              formData.length -1 != index ?
+                <hr className="border border-gray-300 my-4 mx-[20%]"/>
+                :
+                <></>
+            }
             </div>
         ))}
     </div>
