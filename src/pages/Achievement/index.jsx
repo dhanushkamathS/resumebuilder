@@ -36,7 +36,7 @@ function Achievement() {
     
    
 
-    <div className='dark:bg-gray-900 py-[4%]'>
+    <div className='bg-[#111111] py-[4%]'>
         {formData.map((value, index) => (
             <div key={index}>
             <AchievementInput  value={value} index={index} formData={formData} setFormData={setFormData} />

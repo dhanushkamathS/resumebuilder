@@ -34,7 +34,7 @@ function Project() {
     
    
     
-    <div className='dark:bg-gray-900 py-[4%]'>
+    <div className='bg-[#111111] py-[4%]'>
         {formData.map((value, index) => (
             <div key={index} >
             <ProjectInput value={value} index={index} formData={formData} setFormData={setFormData} />

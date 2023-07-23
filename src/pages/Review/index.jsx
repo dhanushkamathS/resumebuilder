@@ -19,7 +19,7 @@ const { data, updateData } = useContext(DataContext);
   return(
   <>
 
-    <div className='bg-gray-900 h-screen'>
+    <div className='bg-[#111111] h-screen'>
     <ToastContainer/>
       {/* navBar */}
       <Navbar/>

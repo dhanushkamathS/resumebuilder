@@ -27,7 +27,7 @@ function Education() {
     <CurrentPosition value={"education"}/>
      <h1 className=' text-lg lg:text-5xl text-center text-white'>Education</h1>
     
-    <div className='dark:bg-gray-900 py-[4%]'>
+    <div className='bg-[#111111] py-[4%]'>
         {formData.map((value, index) => (
             <div key={index}>
             <EducationInput  value={value} index={index} formData={formData} setFormData={setFormData} />

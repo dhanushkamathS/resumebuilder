@@ -10,10 +10,10 @@ const Navbar = () =>{
 
   return(
   <>
-   <nav className="bg-gray-900 mb-4">
+   <nav className="bg-[#111111] mb-4 sm:pr-10">
   <div className="flex flex-wrap items-center justify-between mx-auto p-4">
     <Link to={'/'}  className="">
-        <span className="px-16 text-2xl font-semibold whitespace-nowrap  text-white">Resume Builder</span>
+        <span className="md:px-16 text-2xl font-semibold whitespace-nowrap  text-white">Resume Builder</span>
     </Link>
     <button onClick={()=>{setToggle(!toggle)}} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2" aria-controls="navbar-default" aria-expanded="false">
         <span className="sr-only">Open main menu</span>

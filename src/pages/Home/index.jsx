@@ -7,7 +7,7 @@ const Home = () =>{
 
   return(
   <>
-    <div className='bg-gray-900 h-screen'>
+    <div className='bg-[#111111] h-screen'>
       {/* navBar */}
       <Navbar/>
       <div className='  flex flex-col md:flex-row   h-[90%] space-x-20'>
