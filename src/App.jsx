@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from "react-router-dom"
 import Home from './pages/Home'
 import PersonalDetail from './pages/personalDetail'
@@ -10,8 +10,16 @@ import Skills from './pages/skills'
 import Review from './pages/Review'
 import Landing from './pages/Landing'
 import { DataProvider } from './context/DataContext'
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-7LJDT3JBPS");
 
 function App() {
+
+  useEffect(()=>{
+    console.log("analytics")
+    ReactGA.send({ hitType: "pageview", page: `${window.location.pathname + window.location.search}`, title: "Custom Title" });
+  },[])
   return (
     <>
     <DataProvider>
