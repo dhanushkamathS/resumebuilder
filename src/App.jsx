@@ -11,7 +11,7 @@ import Review from './pages/Review'
 import Landing from './pages/Landing'
 import { DataProvider } from './context/DataContext'
 import ReactGA from "react-ga4";
-
+import { Analytics } from '@vercel/analytics/react';
 ReactGA.initialize("G-7LJDT3JBPS");
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
         <Route path="/app/review" element={<Review/>} />
       </Routes>
     </DataProvider>
+    <Analytics />
     </>
   )
 }
