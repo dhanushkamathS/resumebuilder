@@ -116,7 +116,7 @@ const { data, updateData } = useContext(DataContext);
 
 const DownloadModal = ({data}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [isError,setIsError] = useState(false)
   const [pdfId,setPdfId] = useState('')
   const [isLoading,setIsLoading] = useState(false)
@@ -141,21 +141,21 @@ const DownloadModal = ({data}) => {
 
   const closeModal = () => {
     setIsOpen(false);
-    setEmail('');
+    // setEmail('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
    
 
-    if(!isValidEmail(email)){
-        // console.log('eee')
-        setIsError('invalid input')
-        return
-    }
+    // if(!isValidEmail(email)){
+    //     // console.log('eee')
+    //     setIsError('invalid input')
+    //     return
+    // }
 
     setIsLoading(true)
-    await axios.post(`${BASE_URL}/setemail`,{pdfId,email,data})
+    await axios.post(`${BASE_URL}/setemail`,{pdfId,data})
     linkRef.current.click();
     setIsOpen(false)
     setPdfId('')
@@ -183,22 +183,16 @@ const DownloadModal = ({data}) => {
             <div className="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-sm w-full">
               <div className="bg-white px-4 py-5">
                 <div className="mt-3 text-center sm:mt-5">
-                  <h3 className="text-lg leading-6 font-medium text-gray-900">Enter your email</h3>
+                  <h3 className="text-lg leading-6 font-medium text-gray-900">Download your resume</h3>
                   <div className="mt-2">
                     <form>
-                      <input
+                      {/* <input
                         type="email"
                         className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
                         placeholder="Email address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                      />
-                      {
-                        isError ? 
-                        <p className=' text-red-600 text-sm'>{isError}</p>
-                        :
-                        <></>
-                      }
+                      /> */}
                       <div className="mt-2">
                         {
                             isOpen ?
