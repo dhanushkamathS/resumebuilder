@@ -206,7 +206,7 @@ const DownloadModal = ({data}) => {
                       <div className="mt-2">
                         {
                             isOpen ?
-                              <a href={`${BASE_URL}/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
+                              <a href={`${BASE_URL}/api/getpdf?id=${pdfId}`} ref={linkRef} style={{ display: 'none' }}>Hidden Link</a>
                               :
                               <></>
                         }
