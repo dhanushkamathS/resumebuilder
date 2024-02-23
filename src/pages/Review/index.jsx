@@ -130,7 +130,7 @@ const DownloadModal = ({data}) => {
           category: "download",
           action: "download initiated"
       });
-        const response = await axios.post(`${BASE_URL}/createpdf`, {data});
+        const response = await axios.post(`${BASE_URL}/api/createpdf`, {data});
         console.log(response.data)
         if(response?.data?.status == 'failure'){
             toast(response?.data?.msg)
@@ -165,7 +165,7 @@ const DownloadModal = ({data}) => {
     // }
 
     setIsLoading(true)
-    await axios.post(`${BASE_URL}/setemail`,{pdfId,data})
+    await axios.post(`${BASE_URL}/api/setemail`,{pdfId,data})
     linkRef.current.click();
     setIsOpen(false)
     setPdfId('')
