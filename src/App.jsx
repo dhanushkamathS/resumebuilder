@@ -12,7 +12,7 @@ import Landing from './pages/Landing'
 import { DataProvider } from './context/DataContext'
 import ReactGA from "react-ga4";
 import { Analytics } from '@vercel/analytics/react';
-ReactGA.initialize("G-7LJDT3JBPS");
+ReactGA.initialize("G-E7XX53DBLE");
 
 function App() {
 

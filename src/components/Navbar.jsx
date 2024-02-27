@@ -23,6 +23,9 @@ const Navbar = () =>{
     </button>
     <div className={`${toggle?"":"hidden"} w-full md:block md:w-auto`} id="navbar-default">
       <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border space-y-5 md:space-y-0 md:flex-row md:space-x-8 md:mt-0 md:border-0">
+      <li>
+          <a href='https://rzp.io/l/4njEjJKWk' className="bg-yellow-300 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded" aria-current="page">Resume Review</a>
+        </li>
         <li>
           <Link to={'/home'}  className="block py-2 pl-3 pr-4 text-sm md:text-lg text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">Home</Link>
         </li>
